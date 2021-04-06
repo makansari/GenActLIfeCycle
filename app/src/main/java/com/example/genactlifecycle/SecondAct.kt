@@ -10,8 +10,15 @@ class SecondAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        buttonSecondAct.setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
+        buttonStart.setOnClickListener {
+
+            var i = Intent(this,MyService::class.java)
+            startService(i)
+        }
+
+        buttonStop.setOnClickListener {
+            var i = Intent(this,MyService::class.java)
+            stopService(i)
         }
     }
 }
